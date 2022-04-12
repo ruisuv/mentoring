@@ -1,12 +1,10 @@
 package com.nearsoft.mentoring.tree;
 
-import com.sun.istack.internal.NotNull;
-
 public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 
     private Node<T> root;
 
-    public Node<T> add(@NotNull T value) {
+    public Node<T> add(T value) {
         root = add(root, value);
         System.out.println("Is balanced? " + isBalanced(root));
         return root;
@@ -41,7 +39,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
     }
 
 
-    public boolean contains(@NotNull T value) {
+    public boolean contains(T value) {
         return contains(root, value);
     }
 
@@ -59,7 +57,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
         }
     }
 
-    public Node<T> delete(@NotNull T value) {
+    public Node<T> delete(T value) {
         return delete(root, value);
     }
 
