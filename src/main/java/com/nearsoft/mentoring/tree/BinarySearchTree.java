@@ -4,10 +4,8 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 
     private Node<T> root;
 
-    public Node<T> add(T value) {
+    public void add(T value) {
         root = add(root, value);
-        System.out.println("Is balanced? " + isBalanced(root));
-        return root;
     }
 
     private boolean isBalanced(Node<T> node) {
@@ -57,8 +55,8 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
         }
     }
 
-    public Node<T> delete(T value) {
-        return delete(root, value);
+    public void delete(T value) {
+        delete(root, value);
     }
 
     private Node<T> delete(Node<T> current, T value) {
