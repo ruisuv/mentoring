@@ -1,7 +1,12 @@
 package com.nearsoft.mentoring.tree;
 
+import lombok.Getter;
+import lombok.ToString;
+
+@ToString
 public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 
+    @Getter
     private Node<T> root;
 
     public void add(T value) {
@@ -141,12 +146,5 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
         return stringBuilder;
 
     }
-
-    @Override
-    public String toString() {
-//        System.out.println(transversePreOrder(root, 0).toString());
-        return transverseInOrder(root).toString().trim();
-    }
-
 
 }
