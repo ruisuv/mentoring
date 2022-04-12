@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-class BinarySearchTreeTest {
+class BinarySearchTreeIntegerTest {
 
     @Test
     public void testTreeAdd() {
