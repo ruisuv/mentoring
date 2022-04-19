@@ -1,6 +1,8 @@
-#Java Mentoring
+Java Mentoring
+==============
 
-##Introduction
+Introduction
+------------
 A beginner guide and –hopefully– a helpful resource for interacting with Java Basics.
 Project written as a Java Backend who wanted to help junior developers to cover some of the most used concepts on OOP.
 
@@ -29,8 +31,9 @@ being called "left" and "right" nodes.
 At last, "Binary Search Tree" has the particularity of being sorted, 
 with left children being less than parent and right ones, greater. 
 
-##Instructions
-###First Session: Creating the project
+Instructions
+------------
+### First Session: Creating the project
 - Create a repo on GitHub where main branch has only a README.md
 - Create a Maven project and link it to remote repository 
 - Create `Node` class
@@ -39,19 +42,19 @@ with left children being less than parent and right ones, greater.
     - `contains`
     - `delete`
 
-###Second Session: Recursion
+### Second Session: Recursion
 - Create `BinarySearchTree` Implementation 
   - Implement `add` method  
   - Implement `contains` method
   - Let `delete` method to throw  `java.lang.UnsupportedOperationException`
 
-###Third Session: Unit Testing
+### Third Session: Unit Testing
 - Use assertJ for Unit Testing
   - Test for add method
   - Assert contains
   - Duplicated values are not inserted twice
                                     
-###Fourth Session: Test Driven Development
+### Fourth Session: Test Driven Development
 - Add Test for delete method for the following scenarios
   - Delete leaf
   - Delete node with one child
@@ -60,7 +63,7 @@ with left children being less than parent and right ones, greater.
 - Implement delete method on `BinarySearchTree` class
 - Implement `toString` In Order
 
-###Fifth Session: Generics
+### Fifth Session: Generics
 - Create a class and think about its ordering elements
   - Implements `Comparable`
   - Implements `equals`/`hashCode`
@@ -70,7 +73,7 @@ with left children being less than parent and right ones, greater.
   - Make sure existing tests still passes
   - Add tests for new POJO.
 
-###Sixth Session: Spring Boot Starter
+### Sixth Session: Spring Boot Starter
 - Add Maven Dependency for Spring Boot Starter
 - Create REST API with Spring Boot Starter
   - REST TreeController
@@ -82,16 +85,16 @@ with left children being less than parent and right ones, greater.
 - DELETE
        
 
-###Seventh Session: Connecting with Database
+### Seventh Session: Connecting with Database
 - Create `TreeRepository`
 - Add `spring-boot-starter-data-jdbc` dependency to `pom.xml`  
 - Use H2 as DBMS
 - Load Data from CSV
 
-###Eight Session: External Database and Docker Compose
+### Eight Session: External Database and Docker Compose
 - TBD
 
-###Nth Session: Serverless
+### Nth Session: Serverless
 - TBD
 
                                                              
