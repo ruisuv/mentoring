@@ -15,10 +15,10 @@ import java.net.URI;
 @RequestMapping("/api/books")
 public class BookController {
 
-    private TreeService<Book> service;
+    private final BookService service;
 
     @Autowired
-    public BookController(TreeService<Book> service) {
+    public BookController(BookService service) {
         this.service = service;
     }
 
