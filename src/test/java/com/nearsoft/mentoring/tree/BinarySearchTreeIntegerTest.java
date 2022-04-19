@@ -25,7 +25,7 @@ class BinarySearchTreeIntegerTest {
         assertThat(tree.contains(4)).isTrue();
         assertThat(tree.contains(3)).isTrue();
 
-        assertThat(tree.toString()).isEqualTo("3 4 5 6 7");
+        assertThat(tree.asList()).containsExactly(3,4,5,6,7);
 
 
     }
@@ -71,17 +71,17 @@ class BinarySearchTreeIntegerTest {
         tree.add(8);
         tree.add(10);
 
-        assertThat(tree.toString()).isEqualTo("4 5 6 7 8 9 10");
+        assertThat(tree.asList()).containsExactly(4, 5, 6, 7, 8, 9, 10);
 
         assertThat(tree.contains(6)).isTrue();
         tree.delete(6);
         assertThat(tree.contains(6)).isFalse();
-        assertThat(tree.toString()).isEqualTo("4 5 7 8 9 10");
+        assertThat(tree.asList()).containsExactly(4, 5, 7, 8, 9, 10);
 
         assertThat(tree.contains(4)).isTrue();
         tree.delete(4);
         assertThat(tree.contains(4)).isFalse();
-        assertThat(tree.toString()).isEqualTo("5 7 8 9 10");
+        assertThat(tree.asList()).containsExactly(5, 7, 8, 9, 10);
     }
 
     @Test
@@ -100,35 +100,17 @@ class BinarySearchTreeIntegerTest {
         tree.add(8);
         tree.add(10);
 
-        assertThat(tree.toString()).isEqualTo("4 5 6 7 8 9 10");
+        assertThat(tree.asList()).containsExactly(4, 5, 6, 7, 8, 9, 10);
 
         assertThat(tree.contains(9)).isTrue();
         tree.delete(9);
         assertThat(tree.contains(9)).isFalse();
-        assertThat(tree.toString()).isEqualTo("4 5 6 7 8 10");
+        assertThat(tree.asList()).containsExactly(4, 5, 6, 7, 8, 10);
 
         assertThat(tree.contains(5)).isTrue();
         tree.delete(5);
         assertThat(tree.contains(5)).isFalse();
-        assertThat(tree.toString()).isEqualTo("4 6 7 8 10");
+        assertThat(tree.asList()).containsExactly(4, 6, 7, 8, 10);
     }
 
-    @Test
-    void testIsBalancedTree() {
-        Tree<Integer> tree = new BinarySearchTree<>();
-        //root
-        tree.add(7);
-        System.out.println(tree);
-
-
-        //left
-        tree.add(5);
-        System.out.println(tree);
-        tree.add(4);
-        System.out.println(tree);
-        tree.add(8);
-        System.out.println(tree);
-        tree.add(6);
-        System.out.println(tree);
-    }
 }

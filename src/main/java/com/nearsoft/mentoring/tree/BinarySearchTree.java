@@ -3,11 +3,16 @@ package com.nearsoft.mentoring.tree;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 @ToString
 public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 
     @Getter
     private Node<T> root;
+    private int size;
 
     public void add(T value) {
         root = add(root, value);
@@ -20,6 +25,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
     private Node<T> add(Node<T> current, T value) {
         if (current == null) {
             current = new Node<>(value);
+            size++;
         }
         if (value.compareTo(current.getValue()) < 0) {
             current.setLeft(add(current.getLeft(), value));
@@ -62,6 +68,13 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 
     public void delete(T value) {
         delete(root, value);
+    }
+
+    @Override
+    public List<T> asList() {
+        List<T> list = new ArrayList<>(size);
+        list.addAll(transverseInOrder(root));
+        return list;
     }
 
     private Node<T> delete(Node<T> current, T value) {
@@ -113,15 +126,15 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
         return left == null ? current.getValue() : getSmallestValue(current.getLeft());
     }
 
-    private StringBuilder transverseInOrder(Node<T> current) {
+    private List<T> transverseInOrder(Node<T> current) {
+        List<T> list = new LinkedList<>();
         if (current == null) {
-            return new StringBuilder();
+            return list;
         }
-        return new StringBuilder()
-                .append(transverseInOrder(current.getLeft()))
-                .append(" ")
-                .append(current.getValue())
-                .append(transverseInOrder(current.getRight()));
+        list.addAll(transverseInOrder(current.getLeft()));
+        list.add(current.getValue());
+        list.addAll(transverseInOrder(current.getRight()));
+        return list;
     }
 
     private StringBuilder transversePreOrder(Node<T> current, int level) {

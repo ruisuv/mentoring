@@ -4,7 +4,7 @@ import com.nearsoft.mentoring.model.Book;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BinarySearchTreeBookTest {
 
@@ -50,7 +50,7 @@ public class BinarySearchTreeBookTest {
         tree.add(badGirl);
         tree.add(hundredYears);
         tree.add(littlePrince);
-        assertThat(tree.toString()).isEqualTo("Book(title=One Hundred Years of Solitude, author=García Márquez, isbn=9788420471839, year=1967) Book(title=The Bad Girl, author=Vargas Llosa, isbn=9789707704664, year=2006) Book(title=The Little Prince, author=Saint-Exupéry, isbn=9789871165070, year=1915)");
+        assertThat(tree.asList()).containsExactly(hundredYears, badGirl, littlePrince);
     }
 
     @Test
